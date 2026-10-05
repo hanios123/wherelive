@@ -10,7 +10,18 @@
     "typed-query",
     "listener"
   ],
-  "private": true,
+  "author": "Hani Barkallah",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanios123/wherelive.git"
+  },
+  "homepage": "https://github.com/hanios123/wherelive#readme",
+  "bugs": {
+    "url": "https://github.com/hanios123/wherelive/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "packageManager": "pnpm@11.15.1",
   "type": "module",
   "sideEffects": false,
