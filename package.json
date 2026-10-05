@@ -1,0 +1,117 @@
+{
+  "name": "wherelive",
+  "version": "0.1.0",
+  "description": "Typed where/select/listen for Firebase apps: filter rows you already hold, or listen to only the attributes you selected, with one description. Built for the frontend, runs unchanged in Node.",
+  "keywords": [
+    "firebase",
+    "realtime-database",
+    "firestore",
+    "frontend",
+    "typed-query",
+    "listener"
+  ],
+  "private": true,
+  "packageManager": "pnpm@11.15.1",
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./transport": {
+      "import": {
+        "types": "./dist/transport.d.ts",
+        "default": "./dist/transport.js"
+      },
+      "require": {
+        "types": "./dist/transport.d.cts",
+        "default": "./dist/transport.cjs"
+      }
+    },
+    "./firebase": {
+      "import": {
+        "types": "./dist/firebase.d.ts",
+        "default": "./dist/firebase.js"
+      },
+      "require": {
+        "types": "./dist/firebase.d.cts",
+        "default": "./dist/firebase.cjs"
+      }
+    },
+    "./rxjs": {
+      "import": {
+        "types": "./dist/rxjs.d.ts",
+        "default": "./dist/rxjs.js"
+      },
+      "require": {
+        "types": "./dist/rxjs.d.cts",
+        "default": "./dist/rxjs.cjs"
+      }
+    },
+    "./testing": {
+      "import": {
+        "types": "./dist/testing.d.ts",
+        "default": "./dist/testing.js"
+      },
+      "require": {
+        "types": "./dist/testing.d.cts",
+        "default": "./dist/testing.cjs"
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.test.json",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "vitest run",
+    "check": "pnpm run typecheck && pnpm run lint && pnpm run test && pnpm run build",
+    "test:emulator": "node emulator/run.mjs",
+    "bench": "pnpm run build && node bench/run.mjs",
+    "bench:sdk": "pnpm run build && node --expose-gc bench/sdk.mjs",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,mts,cts,js,mjs,cjs}": "eslint --fix"
+  },
+  "peerDependencies": {
+    "firebase": ">=10",
+    "rxjs": ">=7"
+  },
+  "peerDependenciesMeta": {
+    "firebase": {
+      "optional": true
+    },
+    "rxjs": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.19.0",
+    "eslint": "^10.11.0",
+    "eslint-plugin-unused-imports": "^4.4.1",
+    "firebase": "^12.19.0",
+    "globals": "^17.12.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
+    "rxjs": "^7.8.2",
+    "tsup": "^8.5.1",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.71.0",
+    "vitest": "^5.0.2"
+  }
+}

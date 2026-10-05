@@ -1,0 +1,13 @@
+rules_version = '2';
+
+// For the emulator tests only. Everything the tests use is open; `locked` and anything not listed is refused,
+// which is how the tests see a real permission-denied from Firestore.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /items/{document=**} { allow read, write: if true; }
+    match /customers/{document=**} { allow read, write: if true; }
+    match /orders/{document=**} { allow read, write: if true; }
+    // a collection group query needs a rule that matches the group wherever it sits
+    match /{path=**}/lines/{line} { allow read, write: if true; }
+  }
+}

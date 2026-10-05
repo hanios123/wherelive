@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "items": { ".read": true, ".write": true, ".indexOn": ["n", "tag", "flag", "no", "zero", "blank", "nested/a/b"] },
+    "customers": { ".read": true, ".write": true, ".indexOn": ["age", "tier"] },
+    "summaries": { ".read": true, ".write": true },
+    "locked": { ".read": false, ".write": false }
+  }
+}
