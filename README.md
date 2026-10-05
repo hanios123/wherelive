@@ -1,5 +1,8 @@
 # wherelive
 
+[![npm version](https://img.shields.io/npm/v/wherelive.svg)](https://www.npmjs.com/package/wherelive)
+[![license](https://img.shields.io/npm/l/wherelive.svg)](LICENSE)
+
 SQL for your arrays and your Firestore and Realtime Database reads. Write a loop, or a read from the database, as `select … where … join … group by … order by … limit`.
 
 ```sql
@@ -23,6 +26,14 @@ ListQuery.from(await db.orders.whereIn('status', ['open', 'paid']).get())       
 The same description runs on an array you hold (`from`), reads a Firestore or Realtime Database list once (`get`), and follows it live (`listen`). The database does what it can, the rest finishes locally, and the answer is the same either way.
 
 Built for frontend apps on the Firebase web SDK, and it runs unchanged in Node, so the same query code can be shared with Cloud Functions. The core has no Angular, React, Vue, Svelte, RxJS, browser global, Node API, or Firebase SDK import. It works under any framework or none, and stays safe to import while a page is server-rendered. Firebase sits behind an injectable transport, so everything is testable without a Firebase project.
+
+## Install
+
+```bash
+pnpm add wherelive      # or: npm install wherelive
+```
+
+Current release: **0.1.0** on [npm](https://www.npmjs.com/package/wherelive). `firebase` (10 or later) and `rxjs` (7 or later) are optional peer dependencies. Install `firebase` to use `get` and `listen` through `wherelive/firebase`, and `rxjs` only for `wherelive/rxjs`. Plain `ListQuery` over arrays needs neither.
 
 ## SQL to wherelive
 
