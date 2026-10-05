@@ -10,6 +10,7 @@
     "typed-query",
     "listener"
   ],
+  "license": "MIT",
   "author": "Hani Barkallah",
   "repository": {
     "type": "git",
