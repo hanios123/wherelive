@@ -7,9 +7,9 @@ By taking part you agree to follow the [Code of Conduct](CODE_OF_CONDUCT.md).
 ## Ways to help
 
 - **Try it and tell us what broke.** The most useful report is a small query, the rows you expected, and the rows you got.
-- **Improve the docs.** If something in the README made you stop and re-read, fix the wording.
+- **Improve the docs.** The guides live in [docs/](docs/README.md). If something made you stop and re-read, fix the wording.
 - **Pick up an issue.** Issues labelled [`good first issue`](https://github.com/hanios123/wherelive/labels/good%20first%20issue) are small and self-contained. Comment on one before you start so two people do not do the same work.
-- **Write a transport.** An Admin SDK transport is the most asked-for gap (see "Not built yet" in the README).
+- **Write a transport.** An Admin SDK transport is the most asked-for gap (see "Not built yet" in the [README](README.md#not-built-yet)).
 
 ## Ask before a big change
 
@@ -45,6 +45,7 @@ pnpm test:emulator
 | `src/firebase`, `src/rxjs`, `src/testing` | Optional entry points. Only these may import `firebase` or `rxjs` |
 | `test/` | Unit tests. `boundary`, `structure` and `package` tests guard the rules above |
 | `test-emulator/` | Tests against the real SDK on the emulators |
+| `docs/` | The guides. The README stays short and links to them |
 | `bench/` | Benchmarks. See [bench/README.md](bench/README.md) |
 
 ## Making a change
@@ -52,7 +53,7 @@ pnpm test:emulator
 1. Fork the repo and branch from `main`.
 2. Add or change a test first when you can. A bug fix should come with a test that fails without it.
 3. Run `pnpm run check`. It must pass.
-4. Update the README if behaviour a user can see changed, and add a line under **Unreleased** in [CHANGELOG.md](CHANGELOG.md).
+4. Update the README or the guides in `docs/` if behaviour a user can see changed, and add a line under **Unreleased** in [CHANGELOG.md](CHANGELOG.md).
 5. Open a pull request and fill in the template.
 
 Keep a pull request to one change. A small one is reviewed faster.

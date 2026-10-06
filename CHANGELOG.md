@@ -4,6 +4,10 @@ All notable changes are listed here. The format follows [Keep a Changelog](https
 
 ## [Unreleased]
 
+### Changed
+
+- The README is now short. The guides moved to `docs/`.
+
 ### Added
 
 - Community files: contributing guide, code of conduct, security policy, issue and pull request templates, and CI.
