@@ -1,7 +1,9 @@
 # wherelive
 
 [![npm version](https://img.shields.io/npm/v/wherelive.svg)](https://www.npmjs.com/package/wherelive)
+[![CI](https://github.com/hanios123/wherelive/actions/workflows/ci.yml/badge.svg)](https://github.com/hanios123/wherelive/actions/workflows/ci.yml)
 [![license](https://img.shields.io/npm/l/wherelive.svg)](LICENSE)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 SQL for your arrays and your Firestore and Realtime Database reads. Write a loop, or a read from the database, as `select … where … join … group by … order by … limit`.
 
@@ -562,3 +564,13 @@ pnpm bench:sdk    # a live list on the real Firebase SDK, offline
 ```
 
 Each case is timed next to the same work written by hand (`array.filter`, a sort, a `Map`), after checking that both give the same answer. [bench/README.md](bench/README.md) explains how to read the output. Rough costs on a laptop, per row: a `where` about 0.1 µs, a full `orderBy` 1 to 2 µs, `select` about 0.3 µs, `groupBy` and joins 0.5 to 1 µs. An `orderBy` with a `limit` picks the rows it needs and does not sort the rest. Cost grows in line with the number of rows (a full sort grows slightly faster than the rows do), with no cliff up to 100,000 rows.
+
+## Contributing
+
+Issues, questions and pull requests are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) to set up and see what is most wanted (an Admin SDK transport is the biggest gap). Ask a question or share how you use it in [Discussions](https://github.com/hanios123/wherelive/discussions). Everyone taking part follows the [Code of Conduct](CODE_OF_CONDUCT.md). For a security problem, see [SECURITY.md](SECURITY.md). Changes are listed in [CHANGELOG.md](CHANGELOG.md).
+
+If wherelive saves your team time, starring the repo helps others find it.
+
+## License
+
+[MIT](LICENSE)

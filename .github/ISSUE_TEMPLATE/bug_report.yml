@@ -1,0 +1,50 @@
+name: Bug report
+description: A query returns the wrong rows, a type is wrong, or a listen misbehaves
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. For a security problem, do not file it here. See the [security policy](https://github.com/hanios123/wherelive/security/policy).
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you expected, and what you got instead.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Smallest query that shows it
+      description: The query, the rows it runs on, and the result. A repro with `MemoryFirestoreTransport` from `wherelive/testing` needs no Firebase project.
+      render: typescript
+    validations:
+      required: true
+  - type: dropdown
+    id: backend
+    attributes:
+      label: Where it runs
+      options:
+        - An array (ListQuery.from)
+        - Firestore, get
+        - Firestore, listen
+        - Realtime Database, get
+        - Realtime Database, listen
+        - Types only (it compiles or fails to compile wrongly)
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: wherelive version
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      description: firebase version, Node or browser, TypeScript version.
+      placeholder: firebase 12.19, Node 22, TypeScript 5.9

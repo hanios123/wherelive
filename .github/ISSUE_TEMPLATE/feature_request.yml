@@ -1,0 +1,22 @@
+name: Feature request
+description: Suggest a method, a transport, or a change in behaviour
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What are you trying to do, and what do you write today? Show the loop or the Firebase calls.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What you would like
+      description: How it could look. A method has to mean the same thing on an array, on Firestore and on Realtime Database, so say what it should do on each if you can.
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Help
+      options:
+        - label: I would be willing to send a pull request for this
